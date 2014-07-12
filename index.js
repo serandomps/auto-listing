@@ -7,7 +7,7 @@ var list = function (el, options, paging, fn) {
     $.ajax({
         url: '/apis/v/vehicles',
         headers: {
-            'x-host': 'auto.serandives.com:4000'
+            'x-host': 'auto.serandives.com:4004'
         },
         dataType: 'json',
         success: function (data) {
