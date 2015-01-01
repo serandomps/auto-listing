@@ -17,8 +17,7 @@
         <div class="col-md-4">
             <a class="thumbnail" href="/vehicles/{id}">
                 <div class="price">{price}</div>
-                <img src="{photos[0]}"/>
-
+                <div class="photo"><img src="{photos[0]}"/></div>
                 <div class="info">
                     <table class="table table-condensed">
                         <!--<tr><td class="name">Price</td><td class="value">10000LKR</td></tr>-->
@@ -37,6 +36,10 @@
                         <tr>
                             <td class="name">Mileage</td>
                             <td class="value">{mileage}</td>
+                        </tr>
+                        <tr>
+                            <td class="name"><a href="/vehicles/{id}/edit">Edit here</a></td>
+                            <td class="value"></td>
                         </tr>
                         <!--<tr><td class="name">Transmission</td><td class="value">Automatic</td></tr>-->
                         <!--<tr><td class="name">Fuel</td><td class="value">Gasoline</td></tr>-->
