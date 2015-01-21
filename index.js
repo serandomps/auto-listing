@@ -40,6 +40,10 @@ var list = function (el, options, paging, fn) {
                         sort: sort
                     });
                 });
+                el.on('click', '.edit', function (e) {
+                    serand.redirect($(this).closest('.thumbnail').attr('href') + '/edit');
+                    return false;
+                });
                 if (!fn) {
                     return;
                 }

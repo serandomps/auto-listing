@@ -1,40 +1,52 @@
-.auto-listing .price {
-    margin-top: 6px;
-}
-
 .auto-listing .thumbnail {
     margin-bottom: 20px;
     font-size: 13px;
-}
-
-.auto-listing .thumbnail table {
-    margin-bottom: 0;
-}
-
-.auto-listing .thumbnail .value {
-    text-align: right;
+    position: relative;
+    padding: 0;
 }
 
 .auto-listing .thumbnail img {
     width: 100%;
+    height: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .auto-listing .thumbnail .photo {
     height: 180px;
 }
 
-.auto-listing .thumbnail {
-    position: relative;
+.auto-listing .thumbnail .info {
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top: 1px solid #ddd;
 }
 
-.auto-listing .thumbnail .price {
-    position: absolute;
-    top: -2px;
-    left: 4px;
-    padding: 4px 8px;
+.auto-listing .thumbnail .info .first h4{
+    margin-left: 10px;
+    color: #34495e;
+}
+
+.auto-listing .thumbnail .info .second {
+    font-size: 12px;
+    padding-left: 10px;
+    color: #27ae60;
+}
+
+.auto-listing .thumbnail .info .third {
+    font-size: 12px;
+    padding-left: 10px;
+    color: #34495e;
+}
+
+.auto-listing .thumbnail .edit {
+    background-color: #c0392b;
+    border-top-right-radius: 3px;
+    color: #fff;
     font-size: 14px;
-    color: #ffffff;
-    font-weight: bold;
-    background-color: #2ecc71;
-    font-family: "Oxygen", Helvetica, Arial, sans-serif;
+    padding: 2px 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
 }

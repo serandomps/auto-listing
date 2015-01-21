@@ -16,22 +16,35 @@
         {#.}
         <div class="col-md-4">
             <a class="thumbnail" href="/vehicles/{id}">
-                <div class="price">{price}</div>
+                <div class="edit">Edit</div>
                 <div class="photo"><img src="{photos[0]}"/></div>
                 <div class="info">
-                    <table class="table table-condensed">
-                        <!--<tr><td class="name">Price</td><td class="value">10000LKR</td></tr>-->
-                        <tr>
-                            <td class="name">Make</td>
-                            <td class="value">{make}</td>
-                        </tr>
+                    <div class="row">
+                        <div class="col-md-12 first">
+                            <h4>{make} {model} <small>{year}</small></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 pull-left">
+                            <div class="third"><h6>{price} LKR</h6></div>
+                        </div>
+                        <div class="col-md-6 pull-left">
+                            <div class="third"><h6>{mileage} km</h6></div>
+                        </div>
+                    </div>
+                    <!--<table class="table table-condensed">
+                        &lt;!&ndash;<tr><td class="name">Price</td><td class="value">10000LKR</td></tr>&ndash;&gt;
                         <tr>
                             <td class="name">Model</td>
-                            <td class="value">{model}</td>
+                            <td class="value">{make} {model}</td>
                         </tr>
-                        <tr>
+                        &lt;!&ndash;<tr>
                             <td class="name">Year</td>
                             <td class="value">{year}</td>
+                        </tr>
+                        <tr>
+                            <td class="name">Color</td>
+                            <td class="value">{color}</td>
                         </tr>
                         <tr>
                             <td class="name">Mileage</td>
@@ -40,10 +53,10 @@
                         <tr>
                             <td class="name"><a href="/vehicles/{id}/edit">Edit here</a></td>
                             <td class="value"></td>
-                        </tr>
-                        <!--<tr><td class="name">Transmission</td><td class="value">Automatic</td></tr>-->
-                        <!--<tr><td class="name">Fuel</td><td class="value">Gasoline</td></tr>-->
-                    </table>
+                        </tr>&ndash;&gt;
+                        &lt;!&ndash;<tr><td class="name">Transmission</td><td class="value">Automatic</td></tr>&ndash;&gt;
+                        &lt;!&ndash;<tr><td class="name">Fuel</td><td class="value">Gasoline</td></tr>&ndash;&gt;
+                    </table>-->
                 </div>
             </a>
         </div>
