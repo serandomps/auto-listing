@@ -3,7 +3,7 @@ var serand = require('serand');
 
 var user;
 
-var cdn = serand.configs['cdn-images'];
+var cdn = serand.configs['autos-images'];
 
 var update = function (data) {
     data.forEach(function (v) {
