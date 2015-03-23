@@ -1,24 +1,8 @@
 var dust = require('dust')();
 var serand = require('serand');
+var utils = require('autos-utils');
 
 var user;
-
-var cdn = serand.configs['autos-images'];
-
-var update = function (data) {
-    data.forEach(function (v) {
-        var photos = v.photos;
-        if (!photos) {
-            return;
-        }
-        var i;
-        var length = photos.length;
-        for (i = 0; i < length; i++) {
-            photos[i] = cdn + photos[i];
-        }
-    });
-    return data;
-};
 
 var list = function (el, options, paging, fn) {
     $.ajax({
@@ -28,7 +12,7 @@ var list = function (el, options, paging, fn) {
         },
         dataType: 'json',
         success: function (data) {
-            dust.render('auto-listing', update(data), function (err, out) {
+            dust.render('auto-listing', utils.cdn(data), function (err, out) {
                 $('.auto-listing', el).remove();
                 el.off('click', '.auto-sort .btn');
                 el.append(out);
