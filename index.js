@@ -4,9 +4,25 @@ var utils = require('autos-utils');
 
 var user;
 
-var list = function (el, options, paging, fn) {
+var query = function (options) {
+    if (!options) {
+        return '';
+    }
+    var data = {
+        criteria: {}
+    };
+    var name;
+    for (name in options) {
+        if (options.hasOwnProperty(name)) {
+            data.criteria[name] = options[name];
+        }
+    }
+    return '?data=' + JSON.stringify(data);
+};
+
+var list = function (el, options, fn) {
     $.ajax({
-        url: '/apis/v/vehicles',
+        url: '/apis/v/vehicles' + query(options),
         headers: {
             'x-host': 'autos.serandives.com'
         },
@@ -47,9 +63,7 @@ var list = function (el, options, paging, fn) {
 dust.loadSource(dust.compile(require('./template'), 'auto-listing'));
 
 module.exports = function (sandbox, fn, options) {
-    list(sandbox, options, {
-        sort: 'recent'
-    }, fn);
+    list(sandbox, options, fn);
 };
 
 serand.on('user', 'logged in', function (data) {
