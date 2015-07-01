@@ -28,7 +28,7 @@ var list = function (el, options, fn) {
         },
         dataType: 'json',
         success: function (data) {
-            dust.render('auto-listing', utils.cdn(data), function (err, out) {
+            dust.render('auto-listing', utils.cdn288x162(data), function (err, out) {
                 $('.auto-listing', el).remove();
                 el.off('click', '.auto-sort .btn');
                 el.append(out);
