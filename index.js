@@ -66,6 +66,14 @@ module.exports = function (sandbox, fn, options) {
     list(sandbox, options, fn);
 };
 
-serand.on('user', 'logged in', function (data) {
-    user = data;
+serand.on('user', 'ready', function (usr) {
+    user = usr;
+});
+
+serand.on('user', 'logged in', function (usr) {
+    user = usr;
+});
+
+serand.on('user', 'logged out', function (usr) {
+    user = null;
 });
