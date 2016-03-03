@@ -24,7 +24,7 @@ var list = function (el, options, fn) {
     $.ajax({
         url: '/apis/v/vehicles' + query(options),
         headers: {
-            'x-host': 'autos.serandives.com'
+            'X-Host': 'autos.serandives.com'
         },
         dataType: 'json',
         success: function (data) {
