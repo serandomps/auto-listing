@@ -48,7 +48,7 @@ var list = function (el, options, fn) {
                     return;
                 }
                 fn(false, function () {
-                    el.remove('.auto-listing');
+                    $('.auto-listing', el).remove();
                 });
             });
         },
