@@ -22,10 +22,7 @@ var query = function (options) {
 
 var list = function (el, options, fn) {
     $.ajax({
-        url: '/apis/v/vehicles' + query(options),
-        headers: {
-            'X-Host': 'autos.serandives.com'
-        },
+        url: 'https://autos.serandives.com/apis/v/vehicles' + query(options),
         dataType: 'json',
         success: function (data) {
             dust.render('auto-listing', utils.cdn288x162(data), function (err, out) {
