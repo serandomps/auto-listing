@@ -1,6 +1,7 @@
 var dust = require('dust')();
 var serand = require('serand');
-var utils = require('autos-utils');
+var autils = require('autos-utils');
+var utils = require('utils');
 
 var user;
 
@@ -22,10 +23,10 @@ var query = function (options) {
 
 var list = function (el, options, fn) {
     $.ajax({
-        url: 'https://autos.serandives.com/apis/v/vehicles' + query(options),
+        url: utils.resolve('autos://apis/v/vehicles' + query(options)),
         dataType: 'json',
         success: function (data) {
-            dust.render('auto-listing', utils.cdn288x162(data), function (err, out) {
+            dust.render('auto-listing', autils.cdn288x162(data), function (err, out) {
                 $('.auto-listing', el).remove();
                 el.off('click', '.auto-sort .btn');
                 el.append(out);
