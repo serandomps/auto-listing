@@ -13,10 +13,16 @@ var query = function (options) {
         criteria: {}
     };
     var name;
+    var value;
     for (name in options) {
-        if (options.hasOwnProperty(name)) {
-            data.criteria[name] = options[name];
+        if (!options.hasOwnProperty(name)) {
+            continue;
         }
+        if (name === '_') {
+            continue;
+        }
+        value = options[name];
+        data.criteria[name] = value instanceof Array ? {$in: value} : value;
     }
     return '?data=' + JSON.stringify(data);
 };
