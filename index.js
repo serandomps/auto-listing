@@ -1,7 +1,7 @@
 var dust = require('dust')();
 var serand = require('serand');
-var autils = require('autos-utils');
 var utils = require('utils');
+var Vehicle = require('vehicle-service');
 
 var user;
 
@@ -27,16 +27,35 @@ var query = function (options) {
     return '?data=' + JSON.stringify(data);
 };
 
-var list = function (el, options, fn) {
-    $.ajax({
+var list = function (sandbox, options, fn) {
+    Vehicle.find({query: options, images: '288x162'}, function (err, vehicles) {
+        if (err) {
+            fn(true, serand.none);
+            return;
+        }
+        dust.render('auto-listing', vehicles, function (err, out) {
+            sandbox.append(out);
+            sandbox.on('click', '.edit', function (e) {
+                serand.redirect($(this).closest('.thumbnail').attr('href') + '/edit');
+                return false;
+            });
+            if (!fn) {
+                return;
+            }
+            fn(false, function () {
+                $('.auto-listing', sandbox).remove();
+            });
+        });
+    });
+    /*$.ajax({
         url: utils.resolve('autos://apis/v/vehicles' + query(options)),
         dataType: 'json',
         success: function (data) {
             dust.render('auto-listing', autils.cdn288x162(data), function (err, out) {
-                $('.auto-listing', el).remove();
-                el.off('click', '.auto-sort .btn');
-                el.append(out);
-                el.on('click', '.auto-sort .btn', function () {
+                $('.auto-listing', sandbox).remove();
+                sandbox.off('click', '.auto-sort .btn');
+                sandbox.append(out);
+                sandbox.on('click', '.auto-sort .btn', function () {
                     var sort = $(this).attr('name');
                     var serand = require('serand');
                     serand.emit('auto', 'sort', {sort: sort});
@@ -44,7 +63,7 @@ var list = function (el, options, fn) {
                         sort: sort
                     });
                 });
-                el.on('click', '.edit', function (e) {
+                sandbox.on('click', '.edit', function (e) {
                     serand.redirect($(this).closest('.thumbnail').attr('href') + '/edit');
                     return false;
                 });
@@ -52,7 +71,7 @@ var list = function (el, options, fn) {
                     return;
                 }
                 fn(false, function () {
-                    $('.auto-listing', el).remove();
+                    $('.auto-listing', sandbox).remove();
                 });
             });
         },
@@ -61,7 +80,7 @@ var list = function (el, options, fn) {
 
             });
         }
-    });
+    });*/
 };
 
 dust.loadSource(dust.compile(require('./template'), 'auto-listing'));
