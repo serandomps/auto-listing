@@ -1,66 +1,68 @@
-<div class="auto-listing">
-    <!--<div class="row">
-        <div class="col-md-7"></div>
-        <div class="col-md-5">
-            <div class="row auto-sort">
-                <button type="button" class="btn btn-primary" name="year">Year</button>
-                <button type="button" class="btn btn-success" name="price">Price</button>
-                <button type="button" class="btn btn-info" name="recent">Recent</button>
-                <button type="button" class="btn btn-warning" name="popular">Popular</button>
-            </div>
-        </div>
-    </div>-->
-
-    {@slice size="3"}
-    <div class="row">
-        {#.}
-        <div class="col-md-4 col-sm-6">
-            <a class="thumbnail" href="/vehicles/{id}">
-                <div class="edit">Edit</div>
-                <div class="photo"><img src="{photos[0].url}"/></div>
-                <div class="info">
-                    <div class="row">
-                        <div class="col-md-12 first">
-                            <h4>{make.title} {model.title} <small>{year}</small></h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 pull-left">
-                            <div class="third"><h6>{price} LKR</h6></div>
-                        </div>
-                        <div class="col-md-6 pull-left">
-                            <div class="third"><h6>{mileage} km</h6></div>
-                        </div>
-                    </div>
-                    <!--<table class="table table-condensed">
-                        &lt;!&ndash;<tr><td class="name">Price</td><td class="value">10000LKR</td></tr>&ndash;&gt;
-                        <tr>
-                            <td class="name">Model</td>
-                            <td class="value">{make} {model}</td>
-                        </tr>
-                        &lt;!&ndash;<tr>
-                            <td class="name">Year</td>
-                            <td class="value">{year}</td>
-                        </tr>
-                        <tr>
-                            <td class="name">Color</td>
-                            <td class="value">{color}</td>
-                        </tr>
-                        <tr>
-                            <td class="name">Mileage</td>
-                            <td class="value">{mileage}</td>
-                        </tr>
-                        <tr>
-                            <td class="name"><a href="/vehicles/{id}/edit">Edit here</a></td>
-                            <td class="value"></td>
-                        </tr>&ndash;&gt;
-                        &lt;!&ndash;<tr><td class="name">Transmission</td><td class="value">Automatic</td></tr>&ndash;&gt;
-                        &lt;!&ndash;<tr><td class="name">Fuel</td><td class="value">Gasoline</td></tr>&ndash;&gt;
-                    </table>-->
+<div class="autos-listing">
+    {?title}<h4 class="title">{title}{/title}</h4>
+    <div class="container-fluid">
+        <!--<div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-md-5">
+                <div class="row auto-sort">
+                    <button type="button" class="btn btn-primary" name="year">Year</button>
+                    <button type="button" class="btn btn-success" name="price">Price</button>
+                    <button type="button" class="btn btn-info" name="recent">Recent</button>
+                    <button type="button" class="btn btn-warning" name="popular">Popular</button>
                 </div>
-            </a>
+            </div>
+        </div>-->
+        {@slice context=vehicles size="30"}
+        <div class="row">
+            {#.}
+            <div class="col-md-{size}">
+                <a class="thumbnail" href="/vehicles/{id}">
+                    <div class="edit">Edit</div>
+                    <div class="photo"><img src="{photos[0].url}"/></div>
+                    <div class="info">
+                        <div class="row">
+                            <div class="col-md-12 first">
+                                <h4>{make.title} {model.title} <small>{year}</small></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 pull-left">
+                                <div class="third"><h6>{price} LKR</h6></div>
+                            </div>
+                            <div class="col-md-6 pull-left">
+                                <div class="third"><h6>{mileage} km</h6></div>
+                            </div>
+                        </div>
+                        <!--<table class="table table-condensed">
+                            &lt;!&ndash;<tr><td class="name">Price</td><td class="value">10000LKR</td></tr>&ndash;&gt;
+                            <tr>
+                                <td class="name">Model</td>
+                                <td class="value">{make} {model}</td>
+                            </tr>
+                            &lt;!&ndash;<tr>
+                                <td class="name">Year</td>
+                                <td class="value">{year}</td>
+                            </tr>
+                            <tr>
+                                <td class="name">Color</td>
+                                <td class="value">{color}</td>
+                            </tr>
+                            <tr>
+                                <td class="name">Mileage</td>
+                                <td class="value">{mileage}</td>
+                            </tr>
+                            <tr>
+                                <td class="name"><a href="/vehicles/{id}/edit">Edit here</a></td>
+                                <td class="value"></td>
+                            </tr>&ndash;&gt;
+                            &lt;!&ndash;<tr><td class="name">Transmission</td><td class="value">Automatic</td></tr>&ndash;&gt;
+                            &lt;!&ndash;<tr><td class="name">Fuel</td><td class="value">Gasoline</td></tr>&ndash;&gt;
+                        </table>-->
+                    </div>
+                </a>
+            </div>
+            {/.}
         </div>
-        {/.}
+        {/slice}
     </div>
-    {/slice}
 </div>
