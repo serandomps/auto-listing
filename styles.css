@@ -1,50 +1,50 @@
-.autos-listing .title {
+.vehicles-listing .title {
     margin-top: 0;
 }
 
-.autos-listing .thumbnail {
+.vehicles-listing .thumbnail {
     margin-bottom: 20px;
     font-size: 13px;
     position: relative;
     padding: 0;
 }
 
-.autos-listing .thumbnail img {
+.vehicles-listing .thumbnail img {
     width: 100%;
     height: 100%;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 }
 
-.autos-listing .thumbnail .photo {
+.vehicles-listing .thumbnail .photo {
 
 }
 
-.autos-listing .thumbnail .info {
+.vehicles-listing .thumbnail .info {
     background-color: #f5f5f5;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     border-top: 1px solid #ddd;
 }
 
-.autos-listing .thumbnail .info .first h4{
+.vehicles-listing .thumbnail .info .first h4{
     margin-left: 10px;
     color: #34495e;
 }
 
-.autos-listing .thumbnail .info .second {
+.vehicles-listing .thumbnail .info .second {
     font-size: 12px;
     padding-left: 10px;
     color: #27ae60;
 }
 
-.autos-listing .thumbnail .info .third {
+.vehicles-listing .thumbnail .info .third {
     font-size: 12px;
     padding-left: 10px;
     color: #34495e;
 }
 
-.autos-listing .thumbnail .edit {
+.vehicles-listing .thumbnail .edit {
     background-color: #c0392b;
     border-top-right-radius: 3px;
     color: #fff;

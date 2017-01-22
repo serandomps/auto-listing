@@ -1,6 +1,6 @@
 {
-    "name": "autos-listing",
-    "description": "autos-listing component",
+    "name": "vehicles-listing",
+    "description": "vehicles-listing component",
     "local": [],
     "scripts": ["index.js"],
     "styles": ["styles.css"],

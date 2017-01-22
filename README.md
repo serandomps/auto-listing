@@ -1,2 +1,2 @@
-autos-listing
+vehicles-listing
 ============
