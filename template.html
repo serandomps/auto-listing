@@ -1,5 +1,5 @@
 <div class="vehicles-find">
-    {?title}<h4 class="title">{title}{/title}</h4>
+    {?title}<h2 class="title">{title}{/title}</h2>
     <div class="container-fluid">
         <!--<div class="row">
             <div class="col-md-7"></div>
@@ -17,7 +17,7 @@
             {#.}
             <div class="col-md-{size}">
                 <a class="thumbnail" href="/vehicles/{id}">
-                    <div class="edit">Edit</div>
+                    {?_.edit}<div class="edit">Edit</div>{/_.edit}
                     <div class="photo"><img src="{photos[0].url}"/></div>
                     <div class="info">
                         <div class="row">
