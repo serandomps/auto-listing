@@ -4,14 +4,14 @@ var utils = require('utils');
 
 dust.loadSource(dust.compile(require('./template'), 'vehicles-find'));
 
-module.exports = function (sandbox, options, done) {
+module.exports = function (ctx, sandbox, options, done) {
     dust.render('vehicles-find', options, function (err, out) {
         if (err) {
             return done(err);
         }
         sandbox.append(out);
         sandbox.on('click', '.edit', function (e) {
-            serand.redirect($(this).closest('.thumbnail').attr('href') + '/edit');
+            serand.direct($(this).closest('.thumbnail').attr('href') + '/edit');
             return false;
         });
         done(null, function () {
