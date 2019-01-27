@@ -1,6 +1,6 @@
 <div class="vehicles-find">
     {?title}<h2 class="title">{title}{/title}</h2>
-    <div class="container-fluid">
+    <div class="container-fluid1">
         <!--<div class="row">
             <div class="col-md-7"></div>
             <div class="col-md-5">
@@ -15,8 +15,26 @@
         {@slice context=vehicles size="30"}
         <div class="row">
             {#.}
-            <div class="col-md-{size}">
+            <div class="col-sm-6 col-lg-{size}">
                 <a class="thumbnail" href="/vehicles/{id}">
+                    <div class="card mb-3">
+                        <img src="{_.images[0].url}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{_.make.title} {_.model.title}
+                                <small class="text-muted"> {manufacturedAt|year}</small>
+                            </h5>
+                            <div class="d-flex justify-content-between">
+                                <div class="pr-5">
+                                    <small class="text-muted">{price} LKR</small>
+                                </div>
+                                <div class="card-text">
+                                    <small class="text-muted">{mileage} km</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!--<a class="thumbnail" href="/vehicles/{id}">
                     {?_.edit}<div class="edit">Edit</div>{/_.edit}
                     <div class="image"><img src="{_.images[0].url}"/></div>
                     <div class="info">
@@ -33,7 +51,7 @@
                                 <div class="third"><h6>{mileage} km</h6></div>
                             </div>
                         </div>
-                        <!--<table class="table table-condensed">
+                        &lt;!&ndash;<table class="table table-condensed">
                             &lt;!&ndash;<tr><td class="name">Price</td><td class="value">10000LKR</td></tr>&ndash;&gt;
                             <tr>
                                 <td class="name">Model</td>
@@ -57,9 +75,9 @@
                             </tr>&ndash;&gt;
                             &lt;!&ndash;<tr><td class="name">Transmission</td><td class="value">Automatic</td></tr>&ndash;&gt;
                             &lt;!&ndash;<tr><td class="name">Fuel</td><td class="value">Gasoline</td></tr>&ndash;&gt;
-                        </table>-->
+                        </table>&ndash;&gt;
                     </div>
-                </a>
+                </a>-->
             </div>
             {/.}
         </div>
