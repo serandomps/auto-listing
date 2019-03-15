@@ -12,7 +12,7 @@ module.exports = function (ctx, container, options, done) {
         }
         sandbox.append(out);
         sandbox.on('click', '.edit', function (e) {
-            serand.direct($(this).closest('.thumbnail').attr('href') + '/edit');
+            serand.redirect($(this).closest('.thumbnail').attr('href') + '/edit');
             return false;
         });
         done(null, function () {
